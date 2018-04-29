@@ -86,13 +86,15 @@ var enable_pjax = true;
     <meta property="og:title" content="lemotw  blog">
     <meta property="og:description" content="Something good here....maybe. I mean it should be.">
     <meta property="og:url" content="http://my-ghost-blog.com/">
-    <meta property="og:image" content="http://my-ghost-blog.com/content/images/2018/04/DSC06921.jpg">
+    <meta property="og:image" content="https://i.imgur.com/EZVQWgk.jpg">
     <meta property="article:publisher" content="https://www.facebook.com/lemotw">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="lemotw  blog">
     <meta name="twitter:description" content="Something good here....maybe. I mean it should be.">
     <meta name="twitter:url" content="http://my-ghost-blog.com/">
-    <meta name="twitter:image" content="http://my-ghost-blog.com/content/images/2018/04/DSC06921.jpg">
+    <meta name="twitter:image" content="https://i.imgur.com/EZVQWgk.jpg">
+    <meta property="og:image:width" content="5470">
+    <meta property="og:image:height" content="3656">
     
     <script type="application/ld+json">
 {
@@ -104,7 +106,12 @@ var enable_pjax = true;
         "logo": "http://my-ghost-blog.com/ghost/img/ghosticon.jpg"
     },
     "url": "http://my-ghost-blog.com/",
-    "image": "http://my-ghost-blog.com/content/images/2018/04/DSC06921.jpg",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://i.imgur.com/EZVQWgk.jpg",
+        "width": 5470,
+        "height": 3656
+    },
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://my-ghost-blog.com"
@@ -159,7 +166,7 @@ var enable_pjax = true;
           <div data-pjax-container class="content">
             
 <aside role="banner" class="cover">
-  <div data-load-image="/content/images/2018/04/DSC06921.jpg" class="cover-image"></div>
+  <div data-load-image="https://i.imgur.com/EZVQWgk.jpg" class="cover-image"></div>
   <div class="cover-container">
     <h1 class="cover-title">lemotw  blog</h1>
     <p class="cover-description">Something good here....maybe. I mean it should be.</p>
@@ -169,7 +176,7 @@ var enable_pjax = true;
   <div class="wrapper-container">
     
     <section class="post-list">
-        <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post-item post tag-website">
+        <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post-item post tag-website tag-ghost-tag">
   <header class="post-item-header">
     <h2 itemprop="name" class="post-item-title">
       <a href="blogdeploy_artist/" itemprop="url" data-pjax title="窮人也能架Blog，使用Ghost  Buster  GitHub Pages">
@@ -188,7 +195,8 @@ var enable_pjax = true;
         </time>
       </li>
         <li class="post-item-meta-item">
-            <a itemprop="articleSection" href="tag/website/" data-pjax>website</a> 
+            <a itemprop="articleSection" href="tag/website/" data-pjax>website</a>, 
+            <a itemprop="keywords" href="tag/ghost-tag/" data-pjax>ghost</a> 
         </li>
       <li class="post-item-meta-item">
         <a href="blogdeploy_artist/index.html#disqus_thread" data-pjax data-disqus-identifier="3">Comments</a>
