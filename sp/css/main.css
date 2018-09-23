@@ -1,0 +1,44 @@
+a {
+	-moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+	-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+	-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+	border-bottom: dotted 1px rgba(255, 255, 255, 0.5);
+	text-decoration: none;
+	color: inherit;
+}
+
+body{
+    background-image: url("bg.jpg");
+    background-position: center center, center center;
+}
+
+.tab{
+    width: 80%;
+    height: 60px;
+    line-height: 60px;
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.tabchild{
+    display: inline-block;
+    width: 16%;
+    height: 60px;
+    text-align: center;
+
+    border-radius: 10px;
+    background-color: #566C73;
+    color: #FFFFFB;
+    font-weight: bold;
+    font-size: 12pt;
+    letter-spacing: 3px;　
+}
+
+#canvas-holder{
+    background-color: rgba(255,255,255,0.8);
+    width:80%; 
+    margin:10px auto;
+    border-radius: 15px;
+}

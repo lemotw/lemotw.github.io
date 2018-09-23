@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>107三讀預算</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <script src="./js/Chart.bundle.js"></script>
+    <script src="./js/utils.js"></script>
+</head>
+
+<body>
+    <div id="canvas-holder">
+        <canvas id="chart-area"></canvas>
+
+        <div class="tab">
+            <a href="#" class="child" onclick="update_chart(sa_Data);">
+                <div class="tabchild">學生會</div>
+            </a>
+
+            <a href="#" class="child" onclick="update_chart(sp_Data);">
+                <div class="tabchild">學生議會</div>
+            </a>
+
+            <a href="#" class="child" onclick="update_chart(academic_data);">
+                <div class="tabchild">學術性委員會</div>
+            </a>
+
+            <a href="#" class="child" onclick="update_chart(service_Data);">
+                <div class="tabchild">服務性委員會</div>
+            </a>
+
+            <a href="#" class="child" onclick="update_chart(recreation_Data);">
+                <div class="tabchild">康樂性委員會</div>
+            </a>
+
+            <a href="#" class="child" onclick="update_chart(pe_Data);">
+                <div class="tabchild">體育性委員會</div>
+            </a>
+        </div>
+    </div>
+
+    <script src="./js/pie.js"></script>
+</body>
+
+</html>
