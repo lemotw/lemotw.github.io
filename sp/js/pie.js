@@ -4,6 +4,8 @@ var sp_Data         = {};
 var recreation_Data = {};
 var service_Data    = {};
 var pe_Data         = {};
+var forall			= {str:"所有佔比",
+					   arr:[]};
 
 
 var config = {
@@ -31,19 +33,24 @@ var dynamicColors = function () {
 var tt;
 
 var request = new XMLHttpRequest();
-request.open("GET", "./budge.json", true);
+request.open("GET", "./asset/budge.json", true);
 request.onreadystatechange = function () {
     if (request.readyState == 4) {
         if (request.status == 200) {
+
             var data = JSON.parse(request.responseText);
+			var alld = [data.sa["all"], data.ae["all"], data.sp["all"], data.re["all"], data.se["all"], data.pe["all"]];
+			var alls = [data.sa.str, data.ae.str, data.sp.str, data.re.str, data.se.str, data.pe.str];
+			for(var i=0; i<alld.length; ++i)
+				forall.arr.push({str:alls[i],get:alld[i]});
+
             sa_Data = data.sa;
             academic_data = data.ae;
             sp_Data = data.sp;
             recreation_Data = data.re;
             service_Data = data.se;
             pe_Data = data.pe;
-            console.log(request.responseText);
-            tt = request.responseText;
+
             var bugdata = [];
             var bugstr = [];
             var colorSet = [];
