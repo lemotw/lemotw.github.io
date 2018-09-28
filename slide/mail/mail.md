@@ -1,5 +1,5 @@
 title: Mail 你我該知道的二三事情
-output: slide.html
+output: index.html
 
 --
 
