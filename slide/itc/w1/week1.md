@@ -9,6 +9,9 @@ progress: true
 ### 資訊技術
 <img style="width:100%;" src="lang.png" />
 --
+# 我麼來roadmap一下
+## https://blog.darkthread.net/Photos/2583-5a03-o.png
+--
 # C/C++ 有用嘛?
 --
 ### 資工
@@ -22,6 +25,7 @@ progress: true
 ### 網頁
 * [你的roadmap](https://github.com/kamranahmedse/developer-roadmap)
 * [好心の中文版](https://github.com/goodjack/developer-roadmap-chinese)
+* [不然就是好玩的小網站](http://skill.phodal.com/)
 * 更多資源盡在高科大資研社(?
 --
 ### APP
