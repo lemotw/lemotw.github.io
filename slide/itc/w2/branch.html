@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<script>
+		// JasonsScripts 4.3 Core. Copyright 1999-2014 Lighterra. All rights reserved.
+		(function () {
+		window.lighterra || (window.lighterra = {}); if (!lighterra.browser || 4.3 > lighterra.browser.browserDetectVersion) {
+			var n = function () {
+				function c(a) { var j, h, c, g = a.length; for (j = 0; j < g; j++) { h = a[j]; c = h.b; switch (c) { case 1: c = f; break; case 2: c = b; break; case 3: c = e }if (c && c.indexOf(h.c || h.a) >= 0) { d = h.f || h.a; return h.a } } return null } function a(a, f) { var d = a.indexOf(f); return d >= 0 ? parseFloat(a.substring(d + f.length + 1)) : 0 } var d, f = navigator.userAgent, b = navigator.vendor, e = navigator.platform, g = navigator.appVersion, i = [{
+					a:
+						"Opera Mini", b: 1, f: "Version"
+				}, { a: "Opera", b: 1, c: "OPR", f: "OPR" }, { a: "Opera", b: 1, f: "Version" }, { a: "OmniWeb", b: 1, f: "OmniWeb/" }, { a: "iCab", b: 2 }, { a: "Camino", b: 2 }, { a: "Konqueror", b: 2, c: "KDE" }, { a: "Chrome", b: 1 }, { a: "Android", b: 1 }, { a: "Safari", b: 2, c: "Apple", f: "Version" }, { a: "Firefox", b: 1 }, { a: "Netscape", b: 1 }, { a: "Internet Explorer", b: 1, c: "MSIE", f: "MSIE" }, { a: "Internet Explorer", b: 1, c: "Trident", f: "rv" }, { a: "Mozilla", b: 1, c: "Gecko", f: "rv" }, { a: "Netscape", b: 1, c: "Mozilla", f: "Mozilla" }], k = [{ a: "Windows", b: 3, c: "Win" }, {
+					a: "iOS", b: 1, c:
+						"like Mac"
+				}, { a: "iOS", b: 1, c: "iPad" }, { a: "iOS", b: 1, c: "iPhone" }, { a: "iOS", b: 1, c: "iPod" }, { a: "Mac OS X", b: 1 }, { a: "Mac", b: 3 }, { a: "Android", b: 1 }, { a: "Linux", b: 3 }, { a: "UNIX", b: g, c: "X11" }]; this.h = function () {
+					var b, e, h, l; e = c(i) || "Unknown"; h = a(f, d) || a(g, d) || 1; l = c(k) || "Unknown"; b = { browserDetectVersion: 4.3, name: e, version: h, os: l }; b["is" + e.replace(/\s+/g, "")] = h; b["osIs" + l.replace(/\s+/g, "")] = 1; if (b.isInternetExplorer) b.isIE = h; else if (f.indexOf("WebKit") >= 0) { (h = a(f, "WebKit")) || (h = 1); b.isWebKit = h } else if (b.isOperaMini)
+						b.isOpera = h; if (b.osIsWindows) b.osIsWin = 1; else if (b.osIsMacOSX) b.osIsMac = 1; return b
+				}; return this
+			}.call({}); lighterra.browser = n.h()
+		} lighterra.styles = function () { function c(a) { var d; if (lighterra.browser.isIE && document.createStyleSheet) { d = document.createStyleSheet(); d.cssText = a } else { d = document.createElement("style"); d.type = "text/css"; d.appendChild(document.createTextNode(a)); document.getElementsByTagName("head")[0].appendChild(d) } return d } if (!(this.version >= 4.1)) { this.version = 4.1; this.add = c } return this }.call(
+			lighterra.styles || {}); lighterra.scripts = function () { function c(a) { var d = document.createElement("script"); d.src = a; a = document.getElementsByTagName("script")[0]; return a.parentNode.insertBefore(d, a) } if (!(this.version >= 3)) { this.version = 3; this.load = c } return this }.call(lighterra.scripts || {}); lighterra.events = function () {
+				function c(a, d, f) {
+				a && (d && f) && (a.addEventListener ? a.addEventListener(d, f, !1) : a.attachEvent ? a.attachEvent("on" + d, a.nodeName && a.nodeName.toLowerCase() == "img" ? function () {
+					return f.call(
+						window.event.srcElement, window.event)
+				} : function () { return f.call(a, window.event) }) : a["on" + d.toLowerCase()] = f)
+				} if (!(this.version >= 4)) { this.version = 4; this.addListener = c } return this
+			}.call(lighterra.events || {}); if (!lighterra.html5 || 4.3 > lighterra.html5.version) {
+				var o = function () {
+					var c = [{ d: ["abbr"], e: [7, 0, 0, 0, 0] }, { d: ["article", "aside", "figcaption", "figure", "footer", "header", "hgroup", "nav", "section"], g: !0, e: [9, 4, 6, 5, 11.5] }, { d: ["audio", "video"], g: !0, e: [9, 3.5, 4, 4, 11.5] }, { d: ["bdi", "bdo"], e: [99, 10, 16, 99, 99] }, {
+						d: [
+							"canvas"], g: !0, e: [9, 2, 4, 3.2, 10]
+					}, { d: ["details"], g: !0, e: [99, 99, 12, 6, 22] }, { d: ["main"], g: !0, e: [99, 21, 26, 7, 22] }, { d: ["mark", "time"], e: [9, 4, 6, 5, 11.5] }, { d: ["meter"], e: [99, 16, 8, 99, 11.5] }, { d: ["output"], e: [99, 4, 10, 7, 11] }, { d: ["progress"], e: [10, 6, 8, 7, 11.5] }, { d: ["rp", "rt", "ruby"], e: [5.5, 99, 5, 5, 22] }, { d: ["summary"], e: [99, 99, 12, 6, 22] }]; this.h = function () {
+						var a = lighterra.browser, d = a.version, f, b, e, g, i, k, m = a.isIE && a.isIE < 9, j = "", a = a.isIE ? 0 : a.isFirefox ? 1 : a.isChrome ? 2 : a.isSafari ? 3 : a.isOpera ? 4 : -1; b = c.length; for (f = 0; f < b; f++)if (
+							a < 0 || d < c[f].e[a]) { e = c[f].d; g = c[f].g; k = e.length; for (i = 0; i < k; i++) { m && document.createElement(e[i]); if (g) { j && (j = j + ","); j = j + e[i] } } } j && lighterra.styles.add(j + "{display:block}"); return { version: 4.3 }
+					}; return this
+				}.call({}); lighterra.html5 = o.h()
+			} lighterra.srcset = function () {
+				function c(a, b) { if (d && a) { if (!b) { b = a.srcset || a.getAttribute("srcset"); if (!b) return } a.src = b.split(" ")[0]; a.srcset = b; a.setAttribute("srcset", b) } } function a() {
+					if (d) {
+						var a = document.getElementsByTagName("img"), b = a.length, e, g, i; for (e = 0; e < b; e++) {
+							g = a[e]
+							; (i = g.srcset || g.getAttribute("srcset")) && c(g, i)
+						}
+					}
+				} var d = window.devicePixelRatio > 1 && !("srcset" in new Image); if (!(this.version >= 4)) { this.version = 4; this.apply = c; this.applyToAll = a; d && document.addEventListener("DOMContentLoaded", a, !1) } return this
+			}.call(lighterra.srcset || {}); lighterra.rollovers = function () {
+				function c() {
+					var d = document.getElementsByTagName("img"), c = d.length, b, e, g; for (b = 0; b < c; b++) {
+						e = d[b]; if (g = e.getAttribute("data-oversrc")) {
+						e.dataOverSrc = g; e.dataOverSrcset = e.getAttribute("data-oversrcset"); g = e;
+							var i = new Image, k = void 0; i.src = g.dataOverSrc; if (k = g.dataOverSrcset) { i.srcset = k; lighterra.srcset.apply(i, k) } g.dataOverImage = i; e.onmouseover = e.onmouseout = a
+						}
+					}
+				} function a() {
+					var a = this.src, c = this.srcset, b; if (this.style && (b = this.style.filter)) if (b = b.replace(/.*AlphaImageLoader\(src="([^"][^"]*)".*/, "$1")) { a = b; this.style.filter = "" } this.src = this.dataOverSrc; if (b = this.dataOverSrcset) { this.srcset = b; lighterra.srcset.apply(this, b) } this.dataOverSrc = a; this.dataOverSrcset = c; this.setAttribute("data-oversrc", a);
+					this.setAttribute("data-oversrcset", c)
+				} if (!(this.version >= 4.2)) { this.version = 4.2; !lighterra.browser.osIsiOS && !lighterra.browser.osIsAndroid && lighterra.events.addListener(window, "load", c) } return this
+			}.call(lighterra.rollovers || {});
+		})();
+	</script>
+
+	<script>
+		(function () {
+			var b = lighterra.browser, s = lighterra.styles;
+			if ((b.osIsWin && window.devicePixelRatio > 1) || b.osIsMac) {
+				s.add("\
+	strong { font-size: 92%; }\
+	p strong code, p code strong, li strong code, li code strong { font-size: 109%; }\
+	pre strong { font-size: 100%; }\
+	");
+			}
+			if (b.osIsMac && !(window.devicePixelRatio > 1 || b.isSafari >= 5 || b.isChrome >= 5 || b.isFirefox >= 25)) {
+				s.add("\
+	.quote, .quoteauthor { color: #000; opacity: 0.4; }\
+	#footer h6 { font-weight: normal; }\
+	#footer p { color: #777; }\
+	#footer a, #footer a:visited { color: #888; }\
+	#footer a:hover { color: #AAA; }\
+	#footer a:active { color: #0CF; }\
+	");
+			}
+			if (b.isIE >= 10) {
+				s.add("\
+	h2, h3, h4, h5, h6, dt { text-shadow: 0.13em 0.13em 0.25em #CCC; }\
+	");
+			}
+			if (b.isChrome) {
+				s.add("\
+	h2, h3, h4 { text-shadow: 0.17em 0.17em 0.4em #AAA; }\
+	");
+			}
+			if (b.isFirefox && b.osIsWin) {
+				s.add("\
+	h2, h3, h4 { text-shadow: 0.17em 0.17em 0.3em #BBB; }\
+	h5, h6, dt { text-shadow: 0.13em 0.13em 0.25em #BBB; }\
+	");
+			}
+			if (b.isFirefox && b.osIsMac) {
+				s.add("\
+	h2, h3, h4 { text-shadow: 0.17em 0.17em 0.25em #999; }\
+	h5, h6, dt { text-shadow: 0.13em 0.13em 0.15em #BBB; }\
+	");
+			}
+			if (b.isAndroid) {
+				s.add("\
+	html, body { background: #003; }\
+	");
+			}
+			if (b.isOperaMini) {
+				s.add("\
+	h2, h3, h4, h5, h6, dt { text-shadow: none; }\
+	pre, code, kbd, samp { font-family: Courier, monospace; }\
+	");
+			}
+		})();
+	</script>
+	
+	
+	<script>
+		// JasonsScripts 4.0 Foldout. Copyright 1999-2012 Lighterra. All rights reserved.
+		(function () {
+		lighterra.styles = function () {
+			function g(a) {
+				var b = lighterra.browser, c, d, e, f; a && !a.nodeName && (a = document.getElementById(a)); if (a) {
+					c = a.style; a = "hidden" == c.visibility ? !0 : "visible" == c.visibility ? !1 : 0 == a.offsetHeight; b.isIE && 7 > b.isIE && (c.display = a ? "block" : "none"); if (!b.isIE || 10 <= b.isIE) { d = "all"; if (a && (b.osIsiOS || b.osIsAndroid)) d = "opacity"; d += a ? " 2s" : " 0.5s"; e = ["t", "WebkitT", "MozT", "OT"]; f = e.length; for (b = 0; b < f; b++)c[e[b] + "ransition"] = d } c.overflow = "hidden"; c.height = "auto"; c.visibility = a ? "visible" :
+						"hidden"; c.maxHeight = a ? "2000px" : "0"; c.opacity = a ? "1" : "0"
+				}
+			} this.foldout && 3 <= this.version || (this.foldout = g); return this
+		}.call(lighterra.styles || {});
+		})();
+
+		function brainiacsLineage(arch) {
+			var img = document.getElementById("brainiacsimg");
+			var src = img.src.replace(/([^0-9]*[0-9]*).*/, "$1") + arch;
+			img.src = src + ".png";
+			img.srcset = src + ".svg 1.1x";
+			lighterra.srcset.apply(img);
+		}
+	</script>
+
+
+</head>
+
+<body>
+	<div id="brainiacs" style="text-align: center;">
+		<img id="brainiacsimg" class="diagram" src="http://www.lighterra.com/papers/modernmicroprocessors/brainiacs22.png" alt="">
+		<p id="brainiacslineage" class="caption">Show Lineage:&nbsp;
+			<label class="nowrap">
+				<input type="radio" name="lineage" checked="" onclick="brainiacsLineage('');">None</label>&nbsp;
+			<label class="nowrap">
+				<input type="radio" name="lineage" onclick="brainiacsLineage('x86');">x86</label>&nbsp;
+			<label class="nowrap">
+				<input type="radio" name="lineage" onclick="brainiacsLineage('mips');">MIPS</label>&nbsp;
+			<label class="nowrap">
+				<input type="radio" name="lineage" onclick="brainiacsLineage('sparc');">SPARC</label>&nbsp;
+			<label class="nowrap">
+				<input type="radio" name="lineage" onclick="brainiacsLineage('power');">POWER/PowerPC</label>&nbsp;
+			<label class="nowrap">
+				<input type="radio" name="lineage" onclick="brainiacsLineage('alpha');">Alpha</label>&nbsp;
+			<label class="nowrap">
+				<input type="radio" name="lineage" onclick="brainiacsLineage('arm');">ARM</label>&nbsp;
+			<label class="nowrap">
+				<input type="radio" name="lineage" onclick="brainiacsLineage('x86arm');">x86 &amp; ARM</label>
+		</p>
+		<p class="caption">Figure 11 - Brainiacs vs speed-demons.</p>
+		<h3 class="caption"><a href="http://www.lighterra.com/papers/modernmicroprocessors/#brainiacs">ref to</a></h3>
+	</div>
+</body>
+
+</html>
