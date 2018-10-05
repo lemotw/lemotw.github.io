@@ -133,10 +133,11 @@
 		})();
 
 		function brainiacsLineage(arch) {
-			debugger;
 			var img = document.getElementById("brainiacsimg");
 			var src = img.src.replace(/([^0-9]*[0-9]*).*/, "$1") + arch;
 			img.src = src + ".png";
+			img.srcset = src + ".svg 1.1x";
+			lighterra.srcset.apply(img);
 		}
 	</script>
 
@@ -145,7 +146,7 @@
 
 <body>
 	<div id="brainiacs" style="text-align: center;">
-		<img id="brainiacsimg" class="diagram" src="http://www.lighterra.com/papers/modernmicroprocessors/brainiacs22.png" alt="">
+		<img id="brainiacsimg" class="diagram" src="https://www.lighterra.com/papers/modernmicroprocessors/brainiacs22.png" alt="">
 		<p id="brainiacslineage" class="caption">Show Lineage:&nbsp;
 			<label class="nowrap">
 				<input type="radio" name="lineage" checked="" onclick="brainiacsLineage('');">None</label>&nbsp;

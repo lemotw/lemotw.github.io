@@ -58,8 +58,6 @@ progress: true
 --
 <iframe style="width:100%;height:80%;" src="per.html"></iframe>
 --
-<iframe style="width:100%;height:80%;" src="branch.html"></iframe>
---
 # CPU logic in program
 ---
 # Any Question?
