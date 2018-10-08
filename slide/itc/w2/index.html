@@ -395,10 +395,22 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </div></section>
   </div>
   <div class="slide hidden" id="slide-7">
+    <section class="slide-content"><iframe style="width:100%;height:80%;" src="cpu.html"></iframe></section>
+  </div>
+  <div class="slide hidden" id="slide-8">
     <section class="slide-content"><h1 id="cpi-cycles-per-instruction-">CPI (Cycles per instruction)</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-8">
+  <div class="slide hidden" id="slide-9">
+    <section class="slide-content"><h3 id="wait-let-me-talk-about-asm">Wait... let me talk about ASM</h3>
+<ul>
+<li>add eax,1</li>
+<li>mov eax,ebx</li>
+<li>lw eax</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-10">
     <section class="slide-content"><h3 id="cpu-">CPU如何執行一個指令</h3>
 <ul>
 <li>Fetch(抓取程式碼)</li>
@@ -412,7 +424,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-9">
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><iframe width="853" height="480" src="https://www.youtube.com/embed/JkwDt0tj1fs?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></section>
+  </div>
+  <div class="slide hidden" id="slide-12">
     <section class="slide-content"><div style="text-align:center;">
     <h2 style="font-weight:bold;">沒有Pipeline</h2>
     <br/>
@@ -425,29 +440,92 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <img src="pipelineperf.png"/>
 </div></section>
   </div>
-  <div class="slide hidden" id="slide-10">
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><iframe style="width:100%;height:80%;" src="per.html"></iframe></section>
+  </div>
+  <div class="slide hidden" id="slide-14">
     <section class="slide-content"><h3 id="superscalar">SuperScalar</h3>
 <div style="text-align:center;">
     <img style="width:70%;" src="superscale.png"/>
 </div></section>
   </div>
-  <div class="slide hidden" id="slide-11">
+  <div class="slide hidden" id="slide-15">
     <section class="slide-content"><h3 id="superscalar-performance">SuperScalar performance</h3>
 <div style="text-align:center;margin-top:10%;">
     <img style="width:70%;" src="superscalar2.png"/>
 </div></section>
   </div>
-  <div class="slide hidden" id="slide-12">
-    <section class="slide-content"><iframe style="width:100%;height:80%;" src="per.html"></iframe></section>
+  <div class="slide hidden" id="slide-16">
+    <section class="slide-content"><iframe style="width:100%;height:80%;" src="supersclar.html"></iframe></section>
   </div>
-  <div class="slide hidden" id="slide-13">
+  <div class="slide hidden" id="slide-17">
     <section class="slide-content"><iframe style="width:100%;height:80%;" src="branch.html"></iframe></section>
   </div>
-  <div class="slide hidden" id="slide-14">
+  <div class="slide hidden" id="slide-18">
     <section class="slide-content"><h1 id="cpu-logic-in-program">CPU logic in program</h1>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-15">
+  <div class="slide hidden" id="slide-19">
+    <section class="slide-content"><h3 id="instruction-dependencies">Instruction dependencies</h3>
+<h2 id="a-b-c-">a = b + c;</h2>
+<h2 id="d-a-1-">d = a + 1;</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h3 id="branch">Branch</h3>
+<pre><code class="lang-c++"><span class="hljs-keyword">if</span>(a &gt; <span class="hljs-number">7</span>) {
+    b = c;
+} <span class="hljs-keyword">else</span> {
+    b = d;
+}
+</code></pre>
+<p><br></p>
+<pre><code class="lang-asm">    cmp a, 7    ; a &gt; 7 ?
+    ble L1
+    mov c, b    ; b = c
+    br L2
+L1: mov d, b    ; b = d
+L2: ...
+
+</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-21">
+    <section class="slide-content"><h3 id="-branch">消除branch</h3>
+<ul>
+<li>cmp a, 7       ; a &gt; 7 ?</li>
+<li>mov c, b       ; b = c</li>
+<li>cmovle d, b    ; if le, then b = d</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-22">
+    <section class="slide-content"><div align="center">
+  <img style="width:90%" src="./code1.jpg" />
+</div>
+<div align="right">
+  <font size="3">
+    Source:&nbsp;
+    <a href="https://www.slideshare.net/holograph/how-shit-works-the-cpu" target="_blank">How shit works: the CPU</a>
+  </font>
+</div></section>
+  </div>
+  <div class="slide hidden" id="slide-23">
+    <section class="slide-content"><div align="center">
+  <img style="width:90%" src="./code2.jpg" />
+</div>
+<div align="right">
+  <font size="3">
+    Source:&nbsp;
+    <a href="https://www.slideshare.net/holograph/how-shit-works-the-cpu" target="_blank">How shit works: the CPU</a>
+  </font>
+</div></section>
+  </div>
+  <div class="slide hidden" id="slide-24">
+    <section class="slide-content"><h1 id="simd">SIMD</h1>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-25">
     <section class="slide-content"><h1 id="any-question-">Any Question?</h1>
 <p><br /><br /><br /></p>
 <p><div align="center">
