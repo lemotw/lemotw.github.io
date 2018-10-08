@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script>
+        // JasonsScripts 4.3 Core. Copyright 1999-2014 Lighterra. All rights reserved.
+        (function () {
+            window.lighterra || (window.lighterra = {}); if (!lighterra.browser || 4.3 > lighterra.browser.browserDetectVersion) {
+                var n = function () {
+                    function c(a) { var j, h, c, g = a.length; for (j = 0; j < g; j++) { h = a[j]; c = h.b; switch (c) { case 1: c = f; break; case 2: c = b; break; case 3: c = e }if (c && c.indexOf(h.c || h.a) >= 0) { d = h.f || h.a; return h.a } } return null } function a(a, f) { var d = a.indexOf(f); return d >= 0 ? parseFloat(a.substring(d + f.length + 1)) : 0 } var d, f = navigator.userAgent, b = navigator.vendor, e = navigator.platform, g = navigator.appVersion, i = [{
+                        a:
+                            "Opera Mini", b: 1, f: "Version"
+                    }, { a: "Opera", b: 1, c: "OPR", f: "OPR" }, { a: "Opera", b: 1, f: "Version" }, { a: "OmniWeb", b: 1, f: "OmniWeb/" }, { a: "iCab", b: 2 }, { a: "Camino", b: 2 }, { a: "Konqueror", b: 2, c: "KDE" }, { a: "Chrome", b: 1 }, { a: "Android", b: 1 }, { a: "Safari", b: 2, c: "Apple", f: "Version" }, { a: "Firefox", b: 1 }, { a: "Netscape", b: 1 }, { a: "Internet Explorer", b: 1, c: "MSIE", f: "MSIE" }, { a: "Internet Explorer", b: 1, c: "Trident", f: "rv" }, { a: "Mozilla", b: 1, c: "Gecko", f: "rv" }, { a: "Netscape", b: 1, c: "Mozilla", f: "Mozilla" }], k = [{ a: "Windows", b: 3, c: "Win" }, {
+                        a: "iOS", b: 1, c:
+                            "like Mac"
+                    }, { a: "iOS", b: 1, c: "iPad" }, { a: "iOS", b: 1, c: "iPhone" }, { a: "iOS", b: 1, c: "iPod" }, { a: "Mac OS X", b: 1 }, { a: "Mac", b: 3 }, { a: "Android", b: 1 }, { a: "Linux", b: 3 }, { a: "UNIX", b: g, c: "X11" }]; this.h = function () {
+                        var b, e, h, l; e = c(i) || "Unknown"; h = a(f, d) || a(g, d) || 1; l = c(k) || "Unknown"; b = { browserDetectVersion: 4.3, name: e, version: h, os: l }; b["is" + e.replace(/\s+/g, "")] = h; b["osIs" + l.replace(/\s+/g, "")] = 1; if (b.isInternetExplorer) b.isIE = h; else if (f.indexOf("WebKit") >= 0) { (h = a(f, "WebKit")) || (h = 1); b.isWebKit = h } else if (b.isOperaMini)
+                            b.isOpera = h; if (b.osIsWindows) b.osIsWin = 1; else if (b.osIsMacOSX) b.osIsMac = 1; return b
+                    }; return this
+                }.call({}); lighterra.browser = n.h()
+            } lighterra.styles = function () { function c(a) { var d; if (lighterra.browser.isIE && document.createStyleSheet) { d = document.createStyleSheet(); d.cssText = a } else { d = document.createElement("style"); d.type = "text/css"; d.appendChild(document.createTextNode(a)); document.getElementsByTagName("head")[0].appendChild(d) } return d } if (!(this.version >= 4.1)) { this.version = 4.1; this.add = c } return this }.call(
+                lighterra.styles || {}); lighterra.scripts = function () { function c(a) { var d = document.createElement("script"); d.src = a; a = document.getElementsByTagName("script")[0]; return a.parentNode.insertBefore(d, a) } if (!(this.version >= 3)) { this.version = 3; this.load = c } return this }.call(lighterra.scripts || {}); lighterra.events = function () {
+                    function c(a, d, f) {
+                        a && (d && f) && (a.addEventListener ? a.addEventListener(d, f, !1) : a.attachEvent ? a.attachEvent("on" + d, a.nodeName && a.nodeName.toLowerCase() == "img" ? function () {
+                            return f.call(
+                                window.event.srcElement, window.event)
+                        } : function () { return f.call(a, window.event) }) : a["on" + d.toLowerCase()] = f)
+                    } if (!(this.version >= 4)) { this.version = 4; this.addListener = c } return this
+                }.call(lighterra.events || {}); if (!lighterra.html5 || 4.3 > lighterra.html5.version) {
+                    var o = function () {
+                        var c = [{ d: ["abbr"], e: [7, 0, 0, 0, 0] }, { d: ["article", "aside", "figcaption", "figure", "footer", "header", "hgroup", "nav", "section"], g: !0, e: [9, 4, 6, 5, 11.5] }, { d: ["audio", "video"], g: !0, e: [9, 3.5, 4, 4, 11.5] }, { d: ["bdi", "bdo"], e: [99, 10, 16, 99, 99] }, {
+                            d: [
+                                "canvas"], g: !0, e: [9, 2, 4, 3.2, 10]
+                        }, { d: ["details"], g: !0, e: [99, 99, 12, 6, 22] }, { d: ["main"], g: !0, e: [99, 21, 26, 7, 22] }, { d: ["mark", "time"], e: [9, 4, 6, 5, 11.5] }, { d: ["meter"], e: [99, 16, 8, 99, 11.5] }, { d: ["output"], e: [99, 4, 10, 7, 11] }, { d: ["progress"], e: [10, 6, 8, 7, 11.5] }, { d: ["rp", "rt", "ruby"], e: [5.5, 99, 5, 5, 22] }, { d: ["summary"], e: [99, 99, 12, 6, 22] }]; this.h = function () {
+                            var a = lighterra.browser, d = a.version, f, b, e, g, i, k, m = a.isIE && a.isIE < 9, j = "", a = a.isIE ? 0 : a.isFirefox ? 1 : a.isChrome ? 2 : a.isSafari ? 3 : a.isOpera ? 4 : -1; b = c.length; for (f = 0; f < b; f++)if (
+                                a < 0 || d < c[f].e[a]) { e = c[f].d; g = c[f].g; k = e.length; for (i = 0; i < k; i++) { m && document.createElement(e[i]); if (g) { j && (j = j + ","); j = j + e[i] } } } j && lighterra.styles.add(j + "{display:block}"); return { version: 4.3 }
+                        }; return this
+                    }.call({}); lighterra.html5 = o.h()
+                } lighterra.srcset = function () {
+                    function c(a, b) { if (d && a) { if (!b) { b = a.srcset || a.getAttribute("srcset"); if (!b) return } a.src = b.split(" ")[0]; a.srcset = b; a.setAttribute("srcset", b) } } function a() {
+                        if (d) {
+                            var a = document.getElementsByTagName("img"), b = a.length, e, g, i; for (e = 0; e < b; e++) {
+                                g = a[e]
+                                    ; (i = g.srcset || g.getAttribute("srcset")) && c(g, i)
+                            }
+                        }
+                    } var d = window.devicePixelRatio > 1 && !("srcset" in new Image); if (!(this.version >= 4)) { this.version = 4; this.apply = c; this.applyToAll = a; d && document.addEventListener("DOMContentLoaded", a, !1) } return this
+                }.call(lighterra.srcset || {}); lighterra.rollovers = function () {
+                    function c() {
+                        var d = document.getElementsByTagName("img"), c = d.length, b, e, g; for (b = 0; b < c; b++) {
+                            e = d[b]; if (g = e.getAttribute("data-oversrc")) {
+                                e.dataOverSrc = g; e.dataOverSrcset = e.getAttribute("data-oversrcset"); g = e;
+                                var i = new Image, k = void 0; i.src = g.dataOverSrc; if (k = g.dataOverSrcset) { i.srcset = k; lighterra.srcset.apply(i, k) } g.dataOverImage = i; e.onmouseover = e.onmouseout = a
+                            }
+                        }
+                    } function a() {
+                        var a = this.src, c = this.srcset, b; if (this.style && (b = this.style.filter)) if (b = b.replace(/.*AlphaImageLoader\(src="([^"][^"]*)".*/, "$1")) { a = b; this.style.filter = "" } this.src = this.dataOverSrc; if (b = this.dataOverSrcset) { this.srcset = b; lighterra.srcset.apply(this, b) } this.dataOverSrc = a; this.dataOverSrcset = c; this.setAttribute("data-oversrc", a);
+                        this.setAttribute("data-oversrcset", c)
+                    } if (!(this.version >= 4.2)) { this.version = 4.2; !lighterra.browser.osIsiOS && !lighterra.browser.osIsAndroid && lighterra.events.addListener(window, "load", c) } return this
+                }.call(lighterra.rollovers || {});
+        })();
+    </script>
+
+    <script>
+        (function () {
+            var b = lighterra.browser, s = lighterra.styles;
+            if ((b.osIsWin && window.devicePixelRatio > 1) || b.osIsMac) {
+                s.add("\
+	strong { font-size: 92%; }\
+	p strong code, p code strong, li strong code, li code strong { font-size: 109%; }\
+	pre strong { font-size: 100%; }\
+	");
+            }
+            if (b.osIsMac && !(window.devicePixelRatio > 1 || b.isSafari >= 5 || b.isChrome >= 5 || b.isFirefox >= 25)) {
+                s.add("\
+	.quote, .quoteauthor { color: #000; opacity: 0.4; }\
+	#footer h6 { font-weight: normal; }\
+	#footer p { color: #777; }\
+	#footer a, #footer a:visited { color: #888; }\
+	#footer a:hover { color: #AAA; }\
+	#footer a:active { color: #0CF; }\
+	");
+            }
+            if (b.isIE >= 10) {
+                s.add("\
+	h2, h3, h4, h5, h6, dt { text-shadow: 0.13em 0.13em 0.25em #CCC; }\
+	");
+            }
+            if (b.isChrome) {
+                s.add("\
+	h2, h3, h4 { text-shadow: 0.17em 0.17em 0.4em #AAA; }\
+	");
+            }
+            if (b.isFirefox && b.osIsWin) {
+                s.add("\
+	h2, h3, h4 { text-shadow: 0.17em 0.17em 0.3em #BBB; }\
+	h5, h6, dt { text-shadow: 0.13em 0.13em 0.25em #BBB; }\
+	");
+            }
+            if (b.isFirefox && b.osIsMac) {
+                s.add("\
+	h2, h3, h4 { text-shadow: 0.17em 0.17em 0.25em #999; }\
+	h5, h6, dt { text-shadow: 0.13em 0.13em 0.15em #BBB; }\
+	");
+            }
+            if (b.isAndroid) {
+                s.add("\
+	html, body { background: #003; }\
+	");
+            }
+            if (b.isOperaMini) {
+                s.add("\
+	h2, h3, h4, h5, h6, dt { text-shadow: none; }\
+	pre, code, kbd, samp { font-family: Courier, monospace; }\
+	");
+            }
+        })();
+    </script>
+    <style>
+
+        body {
+            min-width: 768px;
+            max-width: 1000px;
+            margin: 0 auto;
+            font-size: 62.5%;
+            font-family: Verdana, "DejaVu Sans", "Bitstream Vera Sans", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media only screen and (max-device-width: 1024px) {
+            html,
+            body {
+                background: #FFF;
+            }
+            body {
+                max-width: 1024px;
+            }
+            @media only screen and (orientation: landscape) {
+                body,
+                #navbar {
+                    min-width: 1024px;
+                    max-width: 1024px;
+                }
+                body {
+                    font-size: 75%;
+                }
+            }
+        }
+
+        @media only screen and (max-device-width: 599px) {
+            body {
+                font-size: 125%;
+                -webkit-text-size-adjust: none;
+            }
+        }
+
+        @media print {
+            html,
+            body {
+                background: #FFF;
+            }
+            body {
+                min-width: 850px;
+            }
+        }
+
+        nav,
+        article,
+        header,
+        hgroup,
+        figure,
+        figcaption,
+        aside,
+        section,
+        footer {
+            display: block;
+            margin: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        dt {
+            font-family: Verdana, "DejaVu Sans", "Bitstream Vera Sans", sans-serif;
+            font-style: italic;
+            page-break-inside: avoid;
+            page-break-after: avoid;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #FFF;
+            text-shadow: 3px 3px 8px #000;
+        }
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        dt {
+            color: #007;
+            text-shadow: 0.17em 0.17em 0.3em #999;
+            margin-top: 1.2em;
+            margin-bottom: 0.7em;
+        }
+
+        h2 {
+            font-size: 1.9em;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 1.7em;
+        }
+
+        h4 {
+            font-size: 1.5em;
+        }
+
+        h5,
+        h6 {
+            font-size: 1.3em;
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-rendering: optimizeLegibility;
+        }
+
+        h5,
+        h6,
+        dt {
+            font-weight: bold;
+            text-shadow: 0.13em 0.13em 0.25em #999;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        @media only screen and (max-device-width: 599px) {
+            h2 {
+                font-size: 1.6em;
+            }
+            h3 {
+                font-size: 1.5em;
+            }
+            h4 {
+                font-size: 1.4em;
+            }
+        }
+
+        p,
+        ol,
+        ul,
+        dl,
+        th,
+        td {
+            font-size: 1.3em;
+            color: #777;
+            line-height: 1.4;
+        }
+
+        ol ol,
+        ol ul,
+        ul ol,
+        ul ul,
+        dl ol,
+        dl ul,
+        dl dl,
+        dl th,
+        dl td,
+        td p,
+        td ol,
+        td ul,
+        td dl,
+        td td,
+        td th {
+            font-size: 100%;
+        }
+
+        li {
+            page-break-inside: avoid;
+        }
+
+        dd {
+            margin-left: 1.6em;
+        }
+
+        strong {
+            color: #000;
+        }
+
+        sup,
+        sub {
+            font-size: 50%;
+        }
+
+        a {
+            color: #29F;
+            text-decoration: none;
+            outline: none;
+        }
+
+        a:visited {
+            color: #06C;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #4BF;
+        }
+
+        h1 a,
+        #title a {
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        h1 a:active,
+        #title a:active {
+            color: #EEF;
+        }
+
+        .sidebarleft a,
+        .sidebarright a,
+        .messagebox a {
+            color: #08F;
+        }
+
+        @media print {
+            a:visited {
+                color: #29F;
+            }
+        }
+
+        @font-face {
+            font-family: Consolas;
+            src: local("Consolas"), local("Consolas-Regular"), url(../../shared/fonts/consolas-subset-5.00.woff) format("woff");
+        }
+
+        @font-face {
+            font-family: Consolas;
+            font-weight: bold;
+            src: local("Consolas Bold"), local("Consolas-Bold"), url(../../shared/fonts/consolas-bold-5.00.woff) format("woff");
+        }
+
+        @font-face {
+            font-family: Consolas;
+            font-style: italic;
+            src: local("Consolas Italic"), local("Consolas-Italic"), url(../../shared/fonts/consolas-italic-5.00.woff) format("woff");
+        }
+
+        @font-face {
+            font-family: Consolas;
+            font-weight: bold;
+            font-style: italic;
+            src: local("Consolas Bold Italic"), local("Consolas-Bold-Italic"), url(../../shared/fonts/consolas-bold-italic-5.00.woff) format("woff");
+        }
+
+        pre,
+        code,
+        kbd,
+        samp {
+            font-family: Consolas, monospace;
+            color: #000;
+        }
+
+        pre {
+            font-size: 1.2em;
+            color: #0EE;
+            background: #003;
+            padding: 1.5em 2em;
+            border-radius: 0.4em;
+            -moz-border-radius: 0.4em;
+            -webkit-border-radius: 0.4em;
+            overflow-x: auto;
+            overflow-y: auto;
+            page-break-inside: avoid;
+            margin-left: 2em;
+            margin-right: 2em;
+        }
+
+        code,
+        kbd,
+        samp {
+            line-height: 0;
+            white-space: pre-wrap;
+        }
+
+        @media only screen and (max-device-width: 599px) {
+            pre {
+                padding: 1em;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+        @media print {
+            pre {
+                color: #000;
+                background: #FFF;
+            }
+        }
+
+        img {
+            display: block;
+            border: 0;
+            page-break-inside: avoid;
+        }
+
+        a:active img {
+            position: relative;
+            top: 1px;
+        }
+
+        #navbar a:active img,
+        #subnavbar a:active img {
+            top: 0;
+        }
+
+        table {
+            font-size: inherit;
+            border-collapse: collapse;
+            page-break-inside: avoid;
+        }
+
+        table,
+        th,
+        tr,
+        td {
+            border: 0;
+            border-spacing: 0;
+        }
+
+        blockquote {
+            font: 1.7em FreeSerif, "Times New Roman", Times, "Liberation Serif", serif;
+            font-style: italic;
+            page-break-inside: avoid;
+        }
+
+        @media only screen and (max-device-width: 599px) {
+            blockquote {
+                font-size: 1.4em;
+            }
+        }
+
+        hr {
+            background: url(../../shared/curvedheader/sprite3.png) 0 -248px no-repeat;
+            width: 512px;
+            height: 1px;
+            border: 0;
+            margin: 3em auto;
+        }
+
+        form ol,
+        form ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        input,
+        textarea,
+        select,
+        button {
+            font-size: 100%;
+            font-family: Verdana, "DejaVu Sans", "Bitstream Vera Sans", sans-serif;
+            color: #000;
+        }
+
+        input[type=checkbox],
+        input[type=radio] {
+            vertical-align: middle;
+            position: relative;
+            bottom: 1px;
+        }
+
+        input[type=radio] {
+            bottom: 2px;
+        }
+
+        meter,
+        progress {
+            color: #3CF;
+        }
+
+        .heading {
+            font-family: Verdana, "DejaVu Sans", "Bitstream Vera Sans", sans-serif;
+            font-weight: bold;
+            font-style: italic;
+            color: #007;
+        }
+
+        .major {
+            font-size: 108%;
+        }
+
+        .minor {
+            font-size: 92%;
+        }
+
+        p.major {
+            font-size: 1.4em;
+        }
+
+        p.minor {
+            font-size: 1.2em;
+        }
+
+        h2 .minor,
+        h3 .minor {
+            font-size: 75%;
+        }
+
+        @media only screen and (max-device-width: 599px) {
+            .major {
+                font-size: 104%;
+            }
+            p.major {
+                font-size: 1.35em;
+            }
+        }
+
+        a .link {
+            color: #29F;
+        }
+
+        a:visited .link {
+            color: #06C;
+        }
+
+        a .link:hover {
+            text-decoration: underline;
+        }
+
+        a .link:active {
+            color: #4BF;
+        }
+
+        .fineprint {
+            font: 1.1em Verdana, "DejaVu Sans", "Bitstream Vera Sans", sans-serif;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .mainbody {
+            margin: 0 12%;
+        }
+
+        .mainbodycol1 {
+            float: left;
+            width: 48%;
+            padding-top: 1px;
+        }
+
+        .mainbodycol2 {
+            margin-left: 52%;
+            padding-top: 1px;
+        }
+
+        @media only screen and (max-width: 949px) {
+            .mainbody {
+                margin: 0 8%;
+            }
+        }
+
+        @media only screen and (max-width: 899px) {
+            .mainbody {
+                margin: 0 4%;
+            }
+        }
+
+        @media only screen and (max-width: 849px) {
+            .mainbody {
+                margin: 0 2%;
+            }
+        }
+
+        @media only screen and (max-width: 849px) and (orientation: landscape) {
+            .mainbody {
+                margin: 0 4.4%;
+            }
+        }
+
+        @media only screen and (max-device-width: 599px) {
+            .mainbody {
+                margin: 0 -3%;
+            }
+            .mainbodycol1,
+            .mainbodycol2 {
+                float: none;
+                width: 100%;
+                margin-left: 0;
+                padding-top: 0;
+            }
+        }
+
+        @media print {
+            .mainbody {
+                margin: 0 4%;
+            }
+        }
+
+        .quote {
+            font: 1.7em FreeSerif, "Times New Roman", Times, "Liberation Serif", serif;
+            font-style: italic;
+            color: #888;
+            text-align: right;
+            margin: 0 0 0.5em 0;
+            page-break-inside: avoid;
+            page-break-after: avoid;
+        }
+
+        .quoteauthor {
+            font-size: 1.2em;
+            color: #999;
+            text-align: right;
+            margin: 0 0 1em 0;
+            page-break-inside: avoid;
+            page-break-after: avoid;
+        }
+
+        @media only screen and (max-device-width: 599px) {
+            .quote {
+                font-size: 1.4em;
+            }
+            .quoteauthor {
+                font-size: 1.1em;
+            }
+        }
+
+        .author {
+            font: 1.1em Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 1.8em;
+        }
+
+        .author a,
+        .author a:visited {
+            color: #000;
+        }
+
+        .author a:active {
+            color: #0CF;
+        }
+
+        .tocbutton {
+            font-size: 1.1em;
+            float: right;
+            margin: 1em 0 1em 1em;
+        }
+
+        .toc h2,
+        .toc li {
+            margin-top: 0;
+        }
+
+        .toc ol {
+            padding-left: 3em;
+        }
+
+        .foldout {
+            height: 0;
+            max-height: 0;
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+        }
+
+        .codekeyword {
+            color: #4D8FFF;
+        }
+
+        .codetype {
+            color: #4EB4D2;
+        }
+
+        .codeliteral {
+            color: #14B9FF;
+        }
+
+        .codestring {
+            color: #14B9FF;
+        }
+
+        .codecomment {
+            color: #3DFF9D;
+            font-style: italic;
+        }
+
+        @media print {
+            .codekeyword {
+                color: #0000E0;
+            }
+            .codetype {
+                color: #31849B;
+            }
+            .codeliteral {
+                color: #000;
+            }
+            .codestring {
+                color: #0090D0;
+            }
+            .codecomment {
+                color: #00A000;
+            }
+        }
+
+        .photo,
+        .diagram {
+            margin: 0 auto;
+        }
+
+        .photo {
+            box-shadow: 3px 3px 5px #999;
+            -moz-box-shadow: 3px 3px 5px #999;
+            -webkit-box-shadow: 3px 3px 5px #999;
+        }
+
+        .caption {
+            font: 1.1em Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
+            font-weight: bold;
+            color: #000;
+            text-align: center;
+            margin: 0.54em 0 0 0;
+            page-break-before: avoid;
+            page-break-inside: avoid;
+        }
+
+        @media only screen and (max-device-width: 599px) {
+            .caption {
+                font-size: 1em;
+            }
+        }
+
+        .arealeft {
+            clear: both;
+            float: left;
+            margin: 0 20px 12px 0;
+        }
+
+        .arearight {
+            clear: both;
+            float: right;
+            margin: 0 0 12px 15px;
+        }
+
+        .arealeft img,
+        .arearight img {
+            margin-top: 7px;
+        }
+
+        .sidebarleft,
+        .sidebarright {
+            clear: both;
+            width: 30%;
+            padding: 0 15px;
+            box-shadow: 3px 3px 5px #999;
+            -moz-box-shadow: 3px 3px 5px #999;
+            -webkit-box-shadow: 3px 3px 5px #999;
+        }
+
+        .sidebarleft {
+            float: left;
+            margin: 0 20px 12px 0;
+            background: #D7FFFA;
+            border: 1px solid #80EADC;
+        }
+
+        .sidebarright {
+            float: right;
+            margin: 0 0 12px 15px;
+            background: #CCF6FF;
+            border: 1px solid #0DF;
+        }
+
+        .sidebarleft p,
+        .sidebarright p {
+            font-family: Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
+            color: #000;
+            line-height: 1.3;
+        }
+
+        @media only screen and (max-device-width: 599px) {
+            .sidebarleft,
+            .sidebarright {
+                float: none;
+                width: 93%;
+                padding: 0 25px;
+                margin: 0 auto;
+            }
+        }
+
+        .messagebox {
+            width: 66%;
+            padding: 14px 20px 7px 20px;
+            background: #CCF6FF;
+            border: 1px solid #0DF;
+            box-shadow: 3px 3px 8px #999;
+            -moz-box-shadow: 3px 3px 8px #999;
+            -webkit-box-shadow: 3px 3px 8px #999;
+            margin: 40px auto;
+            page-break-inside: avoid;
+        }
+
+        .messagebox h2 {
+            text-shadow: none;
+            margin: 0;
+        }
+
+        .messagebox p {
+            color: #000;
+            line-height: 1.3;
+        }
+
+        @media only screen and (max-device-width: 599px) {
+            .messagebox {
+                width: 95%;
+            }
+        }
+
+        #page,
+        #background,
+        #bgoverlay {
+            width: 100%;
+        }
+
+        #page {
+            background: #FFF;
+        }
+
+        #navbarbg1,
+        #navbarbg2 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #003;
+        }
+
+        #navbarbg1 {
+            width: 100%;
+            height: 52px;
+        }
+
+        #navbarbg2 {
+            width: 285px;
+            height: 74px;
+        }
+
+        #navbarbg3 {
+            background: url(../../shared/curvedheader/sprite3.png) 0 -2px no-repeat;
+            float: left;
+            width: 767px;
+            height: 90px;
+        }
+
+        #navbarbg4 {
+            background: url(../../shared/curvedheader/sprite3.png) 0 -98px repeat-x;
+            margin-left: 767px;
+            height: 90px;
+        }
+
+        #navbar {
+            position: absolute;
+            left: auto;
+            top: 0;
+            width: 100%;
+            max-width: 1000px;
+            height: 90px;
+            overflow: hidden;
+        }
+
+        #navbar table {
+            width: 100%;
+            padding: 0;
+            margin: 12px 0 0 0;
+        }
+
+        #navbar tr,
+        #navbar td,
+        #subnavbar tr,
+        #subnavbar td {
+            vertical-align: top;
+            padding: 0;
+            margin: 0;
+        }
+
+        #navbar #navbarlogocell {
+            padding: 0 0 0 12px;
+        }
+
+        #navbarlighterra {
+            background: url(../../shared/curvedheader/sprite3.png) -2px -192px no-repeat;
+        }
+
+        #navbarabout {
+            background: url(../../shared/curvedheader/sprite3.png) -270px -192px no-repeat;
+        }
+
+        #navbarsoftware {
+            background: url(../../shared/curvedheader/sprite3.png) -378px -192px no-repeat;
+        }
+
+        #navbararticles {
+            background: url(../../shared/curvedheader/sprite3.png) -516px -192px no-repeat;
+        }
+
+        #navbarsearch {
+            background: url(../../shared/curvedheader/sprite3.png) -647px -192px no-repeat;
+        }
+
+        #content {
+            width: 88%;
+            margin: 0 6%;
+            min-height: 560px;
+        }
+
+        #title {
+            margin: 30px 0 100px 70px;
+        }
+
+        #breadcrumbs {
+            width: 100%;
+            text-align: center;
+            padding-top: 2em;
+            page-break-inside: avoid;
+        }
+
+        #breadcrumbs p {
+            font: 1.1em Verdana, "DejaVu Sans", "Bitstream Vera Sans", sans-serif;
+            color: #AAA;
+            margin: 0 3%;
+        }
+
+        #breadcrumbs a,
+        #breadcrumbs a:visited {
+            color: #AAA;
+        }
+
+        #breadcrumbs a:active {
+            color: #0CF;
+        }
+
+        #footerbg {
+            background: url(../../shared/curvedheader/sprite3.png) 0 -253px repeat-x;
+            width: 100%;
+            height: 20px;
+        }
+
+        #footer {
+            width: 100%;
+            background: #003;
+            padding: 1em 0;
+            font-family: Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
+            page-break-inside: avoid;
+        }
+
+        #footercol1 {
+            float: left;
+            width: 30.5%;
+            margin: 0 1.5% 0 6%;
+            padding-top: 1px;
+        }
+
+        #footercol2 {
+            float: left;
+            width: 25%;
+            margin: 0 2%;
+            padding-top: 1px;
+        }
+
+        #footercol3 {
+            margin: 0 6% 0 67%;
+            padding-top: 1px;
+        }
+
+        #footer h6 {
+            font-size: 1.5em;
+            color: #1FEBFF;
+            text-shadow: none;
+            margin: 9px 0;
+        }
+
+        #footer p {
+            font-size: 1.3em;
+            color: #AAA;
+            line-height: normal;
+            margin: 0.7em 0;
+        }
+
+        #footer ul {
+            list-style: none;
+            font-size: 1.3em;
+            line-height: normal;
+            padding: 0;
+            margin: 0;
+        }
+
+        #footer li {
+            margin: 0.5em 0 0 0;
+        }
+
+        #footer a,
+        #footer a:visited {
+            color: #AAA;
+        }
+
+        #footer a:hover {
+            color: #CCC;
+        }
+
+        #footer a:active {
+            color: #0CF;
+        }
+
+        #footer h6 a,
+        #footer h6 a:visited,
+        #footer h6 a:hover {
+            color: #1FEBFF;
+        }
+
+        #footer h6 a:active {
+            color: #2FF;
+        }
+
+        #footercol1 p a {
+            color: #BBB;
+        }
+
+        #footercol1 img {
+            float: left;
+            margin: 4px 10px 5px 0;
+        }
+
+        #footer hr {
+            background: url(../../shared/curvedheader/sprite3.png) 0 -251px no-repeat;
+            margin: 1.5em auto 1em auto;
+        }
+
+        #footer .copyright {
+            font: 1.1em Verdana, "DejaVu Sans", "Bitstream Vera Sans", sans-serif;
+            text-align: center;
+        }
+
+        #footer .copyright a,
+        #footer .copyright a:visited {
+            color: #AAA;
+        }
+
+        #footer .copyright a:active {
+            color: #0CF;
+        }
+
+        @media only screen and (max-device-width: 599px) {
+            #footercol1,
+            #footercol2,
+            #footercol3 {
+                float: none;
+                width: 90%;
+                margin: 0 5% 0.7em 5%;
+            }
+            #footercol1 img {
+                width: 85px;
+                height: 85px;
+                margin: 14px 24px 10px 0;
+            }
+            #footer p {
+                font-size: 1.38em;
+            }
+            #footer li {
+                margin-left: 1em;
+            }
+        }
+
+        @media print {
+            #footerbg {
+                height: 0;
+            }
+            #footer {
+                background: #FFF;
+            }
+            #footercol1,
+            #footercol2,
+            #footercol3 {
+                height: 0;
+                visibility: hidden;
+                overflow: hidden;
+            }
+            #footer hr {
+                margin-top: 0;
+            }
+        }
+    </style>
+    <style>
+        #background {
+            background: url(../../shared/backgrounds/chipssandybridge.jpg) 0 50px no-repeat;
+        }
+
+        #title {
+            font-size: 24px;
+            margin-bottom: 0;
+        }
+
+        #title .major {
+            font-size: 36px;
+        }
+
+        #description {
+            font-size: 13px;
+            font-weight: bold;
+            color: #FFF;
+            text-shadow: 0.13em 0.13em 0.3em #000;
+            margin: 15px 100px 50px 70px;
+        }
+
+        .diagram {
+            margin: 30px auto 15px auto;
+        }
+
+        .caption {
+            margin: 0 0 20px 0;
+        }
+
+        pre.code {
+            margin-left: 80px;
+            margin-right: 80px;
+        }
+
+        .datatable {
+            margin: 15px auto;
+        }
+
+        .datatable th,
+        .datatable td {
+            font: 1.2em Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
+            color: #000;
+            padding: 0.25em 0.45em;
+            margin: 0;
+        }
+
+        .datatable th {
+            font-style: italic;
+        }
+
+        .datatable tr:hover {
+            background: #EEE;
+        }
+
+        #megahertztable .result {
+            text-align: right;
+            padding-right: 1.5em;
+        }
+
+        #depthtable th,
+        #widthtable th {
+            text-align: left;
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+
+        #depthtable .result {
+            padding-left: 3.7em;
+        }
+
+        #widthtable .result {
+            padding-left: 3.2em;
+        }
+
+        .memoryheirarchytable td {
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+
+        .memoryheirarchytable .result {
+            text-align: right;
+        }
+
+        .instructionflow img {
+            width: 384px;
+            height: 145px;
+        }
+
+        #pipelinedmicroarch img {
+            width: 380px;
+            height: 96px;
+        }
+
+        #pipelinedbypasses img {
+            width: 335px;
+            height: 83px;
+        }
+
+        #pipelinedfunctionalunits img {
+            width: 390px;
+            height: 92px;
+        }
+
+        #superscalarmicroarch img {
+            width: 437px;
+            height: 335px;
+        }
+
+        #brainiacs img {
+            width: 539px;
+            height: 333px;
+        }
+
+        input[type=radio] {
+            bottom: 1px;
+        }
+
+        #heatsink img {
+            width: 250px;
+            height: 225px;
+        }
+
+        #riscyx86 img {
+            width: 603px;
+            height: 333px;
+        }
+
+        #smt img {
+            width: 391px;
+            height: 145px;
+        }
+
+        #chipsandybridge {
+            width: 250px;
+            height: 120px;
+            margin-right: 40px;
+        }
+
+        #chipniagara3 {
+            width: 180px;
+            height: 182px;
+        }
+
+        #chiphaswellep img {
+            width: 390px;
+            height: 244px;
+        }
+
+        #chiptegra2 img {
+            width: 288px;
+            height: 290px;
+        }
+
+        #shortvectoradd img {
+            width: 381px;
+            height: 136px;
+        }
+
+        #cachelookup img {
+            width: 425px;
+            height: 219px;
+        }
+
+        #cachesetassoc img {
+            width: 241px;
+            height: 204px;
+        }
+
+        @media only screen and (max-width: 849px) and (orientation: landscape) {
+            #description {
+                font-size: 17px;
+            }
+            .instructionflow img {
+                width: 461px;
+                height: 174px;
+            }
+            #pipelinedmicroarch img {
+                width: 456px;
+                height: 115px;
+            }
+            #pipelinedbypasses img {
+                width: 402px;
+                height: 100px;
+            }
+            #pipelinedfunctionalunits img {
+                width: 468px;
+                height: 110px;
+            }
+            #superscalarmicroarch img {
+                width: 524px;
+                height: 402px;
+            }
+            #brainiacs img {
+                width: 647px;
+                height: 400px;
+            }
+            #heatsink img {
+                width: 300px;
+                height: 270px;
+            }
+            #riscyx86 img {
+                width: 724px;
+                height: 400px;
+            }
+            #smt img {
+                width: 469px;
+                height: 174px;
+            }
+            #shortvectoradd img {
+                width: 457px;
+                height: 163px;
+            }
+            #cachelookup img {
+                width: 510px;
+                height: 263px;
+            }
+            #cachesetassoc img {
+                width: 289px;
+                height: 245px;
+            }
+        }
+
+        @media only screen and (max-device-width: 599px) {
+            #description {
+                font-size: 18px;
+            }
+            .quote {
+                font-size: 1.3em;
+            }
+            .caption {
+                margin: 0 0 40px 0;
+            }
+            pre.code {
+                padding: 1em 1.5em;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            #depthtable th,
+            #widthtable th {
+                text-align: center;
+            }
+            #depthtable .result {
+                padding-left: 2.9em;
+            }
+            #widthtable .result {
+                padding-left: 2em;
+            }
+            .memoryheirarchytable td {
+                padding-left: 0.4em;
+                padding-right: 0.4em;
+            }
+            .instructionflow img,
+            #pipelinedmicroarch img,
+            #pipelinedbypasses img,
+            #pipelinedfunctionalunits img,
+            #superscalarmicroarch img,
+            #brainiacs img,
+            #heatsink img,
+            #riscyx86 img,
+            #smt img,
+            #cores,
+            #chiphaswellep img,
+            #chiptegra2 img,
+            #shortvectoradd img,
+            #cachelookup img,
+            #cachesetassoc img {
+                width: 100%;
+                height: auto;
+                margin: 50px auto 30px auto;
+            }
+            #chipsandybridge {
+                width: 375px;
+                height: 180px;
+                margin-right: 20px;
+            }
+            #chipniagara3 {
+                width: 270px;
+                height: 273px;
+            }
+            #cachesetassoc img {
+                width: 75%;
+                height: auto;
+                margin: 50px auto 30px auto;
+            }
+            @media only screen and (orientation: landscape) {
+                .memoryheirarchytable {
+                    font-size: 95%;
+                }
+                #superscalarmicroarch img {
+                    width: 74%;
+                    height: auto;
+                }
+                #heatsink img,
+                #chiptegra2 img,
+                #cachesetassoc img {
+                    width: 55%;
+                    height: auto;
+                }
+                #chipsandybridge {
+                    width: 500px;
+                    height: 240px;
+                }
+                #chipniagara3 {
+                    width: 360px;
+                    height: 364px;
+                }
+                #chiphaswellep img {
+                    width: 85%;
+                    height: auto;
+                }
+            }
+        }
+    </style>
+    <script>
+        // JasonsScripts 4.0 Foldout. Copyright 1999-2012 Lighterra. All rights reserved.
+        (function () {
+            lighterra.styles = function () {
+                function g(a) {
+                    var b = lighterra.browser, c, d, e, f; a && !a.nodeName && (a = document.getElementById(a)); if (a) {
+                        c = a.style; a = "hidden" == c.visibility ? !0 : "visible" == c.visibility ? !1 : 0 == a.offsetHeight; b.isIE && 7 > b.isIE && (c.display = a ? "block" : "none"); if (!b.isIE || 10 <= b.isIE) { d = "all"; if (a && (b.osIsiOS || b.osIsAndroid)) d = "opacity"; d += a ? " 2s" : " 0.5s"; e = ["t", "WebkitT", "MozT", "OT"]; f = e.length; for (b = 0; b < f; b++)c[e[b] + "ransition"] = d } c.overflow = "hidden"; c.height = "auto"; c.visibility = a ? "visible" :
+                            "hidden"; c.maxHeight = a ? "2000px" : "0"; c.opacity = a ? "1" : "0"
+                    }
+                } this.foldout && 3 <= this.version || (this.foldout = g); return this
+            }.call(lighterra.styles || {});
+        })();
+
+        function brainiacsLineage(arch) {
+            var img = document.getElementById("brainiacsimg");
+            var src = img.src.replace(/([^0-9]*[0-9]*).*/, "$1") + arch;
+            img.src = src + ".png";
+            img.srcset = src + ".svg 1.1x";
+            lighterra.srcset.apply(img);
+        }
+    </script>
+
+
+</head>
+
+<body>
+
+<table id="widthtable" class="datatable">
+						<tbody><tr>
+							<th>Issue Width</th>
+							<th>Processors</th>
+						</tr>
+						<tr>
+							<td class="result">1</td>
+							<td>UltraSPARC T1</td>
+						</tr>
+						<tr>
+							<td class="result">2</td>
+							<td>UltraSPARC T2/T3, Scorpion, <span class="nowrap">Cortex-A9</span></td>
+						</tr>
+						<tr>
+							<td class="result">3</td>
+							<td>Pentium Pro/II/III/M, <span class="nowrap">Pentium 4,</span> Krait, <span class="nowrap">Apple A6,</span> <span class="nowrap">Cortex-A15/A57</span></td>
+						</tr>
+						<tr>
+							<td class="result">4</td>
+							<td>UltraSPARC III/IV, <span class="nowrap">PowerPC G4e</span></td>
+						</tr>
+						<tr>
+							<td class="result">4/8</td>
+							<td>Bulldozer/Piledriver, Steamroller</td>
+						</tr>
+						<tr>
+							<td class="result">5</td>
+							<td>PowerPC G5</td>
+						</tr>
+						<tr>
+							<td class="result">6</td>
+							<td>Athlon, Athlon 64/Phenom, <span class="nowrap">Core 2,</span> <span class="nowrap">Core i*1</span> Nehalem,<span class="nowrap"> Core i*2/i*3</span> <span class="nowrap">Sandy/Ivy Bridge,</span> <span class="nowrap">Apple A7/A8</span></td>
+						</tr>
+						<tr>
+							<td class="result">7</td>
+							<td>Denver</td>
+						</tr>
+						<tr>
+							<td class="result">8</td>
+							<td>Core i*4/i*5 Haswell/Broadwell</td>
+						</tr>
+					</tbody></table>
+					<p class="caption">Table 3 - Issue widths of common processors.</p>
+
+</body>
+
+</html>
