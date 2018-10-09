@@ -15,6 +15,12 @@ progress: true
 ### CPU 
 <img style="width:100%;" src="cpuphical.jpg" />
 --
+### Wait... let me talk about ASM
+* add eax,1
+* mov eax,ebx
+* lw eax
+
+--
 ### CPU 架構
 <img style="width:100%;" src="cpustructure.jpg" />
 --
@@ -22,15 +28,9 @@ progress: true
 	<img src="cpuscore.jpg"/>
 </div>
 --
-<iframe style="width:100%;height:80%;" src="cpu.html"></iframe>
---
 # CPI (Cycles per instruction)
 --
-### Wait... let me talk about ASM
-* add eax,1
-* mov eax,ebx
-* lw eax
-
+<iframe style="width:100%;height:80%;" src="cpu.html"></iframe>
 --
 ### CPU如何執行一個指令
 * Fetch(抓取程式碼)
