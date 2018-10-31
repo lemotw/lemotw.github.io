@@ -39,11 +39,13 @@ request.onreadystatechange = function () {
         if (request.status == 200) {
 
             var data = JSON.parse(request.responseText);
+
 			var alld = [data.sa["all"], data.ae["all"], data.sp["all"], data.re["all"], data.se["all"], data.pe["all"]];
 			var alls = [data.sa.str, data.ae.str, data.sp.str, data.re.str, data.se.str, data.pe.str];
 			for(var i=0; i<alld.length; ++i)
 				forall.arr.push({str:alls[i],get:alld[i]});
 
+            var bugdata = [];
             sa_Data = data.sa;
             academic_data = data.ae;
             sp_Data = data.sp;
@@ -51,10 +53,8 @@ request.onreadystatechange = function () {
             service_Data = data.se;
             pe_Data = data.pe;
 
-            var bugdata = [];
             var bugstr = [];
             var colorSet = [];
-            console.log(sa_Data);
             sa_Data["arr"].forEach(function store_data(i) {
                 bugdata.push(i.get);
                 bugstr.push(i.str);
@@ -68,6 +68,7 @@ request.onreadystatechange = function () {
 
             var ctx = document.getElementById('chart-area').getContext('2d');
             window.myPie = new Chart(ctx, config);
+			console.log(data);
         }
     }
 }
