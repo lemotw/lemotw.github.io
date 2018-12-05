@@ -24,7 +24,7 @@ progress: true
 # Take a look at <a href="http://www.ilong-termcare.com/m/Article/Detail/125">this</a>
 --
 ### But maybe someone we can help them by $1500
-<img src="./img/elder.jpg" style="width:100%"/>
+<img src="./img/elder.jpg" style="width:50%"/>
 --
 # Good policy can help more to elder than technology.
 ---
