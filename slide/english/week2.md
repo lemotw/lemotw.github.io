@@ -5,6 +5,8 @@ progress: true
 --
 # How can technology help improve lives of the elderly~
 --
+<img src="./img/pic.jpg" style="width:100%" />
+--
 # First you need to know what they need
 --
 ### They need
